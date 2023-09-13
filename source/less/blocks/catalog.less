@@ -1,0 +1,37 @@
+.catalog__wrapper {
+  width: 288px;
+  margin: 0 auto;
+}
+
+.catalog__title {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 24px;
+}
+
+@media (min-width: @tablet-width) {
+  .catalog__wrapper {
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .catalog__title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 55px;
+    padding: 27px 28px;
+    padding-bottom: 26px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .catalog__wrapper {
+    max-width: 1180px;
+  }
+}

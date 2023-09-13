@@ -1,0 +1,398 @@
+.card {
+  position: relative;
+  margin-bottom: 32px;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.card__wrapper {
+  color: rgb(255, 255, 255);
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  padding: 77px 21px 21px 21px;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  overflow: hidden;
+  min-height: 248px;
+}
+
+.card__wrapper:hover {
+  box-shadow: 0 4px 15px rgba(34, 60, 80, 0.2);
+}
+
+.card__booking {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgb(60, 62, 67);
+  z-index: 999;
+  bottom: 0;
+  width: 246px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 14px 21px 25px 21px;
+  border-radius: 0 0 13px 13px;
+}
+
+.card__reserve {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.card__wrapper--default {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 34, 64, 0.1) 0%,
+    rgb(10, 34, 64) 100%
+  );
+}
+
+.card--pay {
+  position: absolute;
+}
+
+.card--selected {
+  display: block;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.card--active {
+  .card__booking {
+    display: flex;
+  }
+}
+
+.card__payment {
+  color: rgb(255, 75, 119);
+}
+
+.card__payment:hover {
+  text-decoration: underline;
+}
+
+.card__payment:active {
+  color: rgb(255, 151, 176);
+  text-decoration: none;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.card__badge {
+  display: none;
+  position: absolute;
+  top: 22px;
+  left: 21px;
+  z-index: 100;
+}
+
+.card__badge::before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 29px;
+  background-image: url("../img/icon-discount.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+.card__br {
+  display: block;
+}
+
+.card__title {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: start;
+  margin: 0;
+  margin-bottom: 12px;
+  word-wrap: break-word;
+}
+
+.card__title:active {
+  text-decoration-line: none;
+}
+
+.card__link {
+  color: rgb(255, 255, 255);
+  list-style: none;
+  text-decoration: none;
+  display: inline;
+}
+
+.card__link:hover {
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  cursor: pointer;
+}
+
+.card__link:active {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+.card__description {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  position: relative;
+  margin: 0;
+  margin-bottom: 21px;
+  letter-spacing: 0.5px;
+}
+
+.card__info {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 0;
+  margin-top: 17px;
+  letter-spacing: 0.5px;
+}
+
+.card__rate {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 15px;
+  margin-top: -1px;
+}
+
+.card__rate--active {
+  border-top: none;
+}
+
+.card__price {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card__button {
+  width: 100%;
+  padding: 9px;
+  background-color: rgb(249, 17, 85);
+  color: rgb(255, 255, 255);
+  border: none;
+  letter-spacing: 0.5px;
+}
+
+.card__discount:not(.card--active):hover .card__badge {
+  display: flex;
+}
+
+.card--active.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 100;
+  border-radius: 13px;
+}
+
+.card__br__correction {
+  display: inline-block;
+}
+
+@media (min-width: @tablet-width) {
+  .card {
+    width: 336px;
+    margin: 0 28px 37px 0;
+    display: flex;
+  }
+
+  .card:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .card:last-child {
+    margin-right: 0;
+  }
+
+  .card__wrapper {
+    width: 288px;
+    padding: 27px 24px;
+    padding-top: 17px;
+    display: flex;
+    flex-flow: column;
+    bottom: 0;
+    justify-content: flex-end;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    min-height: 376px;
+  }
+
+  .card__badge {
+    left: 25px;
+  }
+
+  .card__image {
+    width: 336px;
+  }
+
+  .card__title {
+    font-size: 24px;
+    line-height: 32px;
+    text-align: start;
+    margin: 0;
+    letter-spacing: initial;
+  }
+
+  .card__description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 13px;
+    letter-spacing: revert;
+  }
+
+  .card__info {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 13px;
+    letter-spacing: inherit;
+  }
+
+  .card__price {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .card__rate {
+    margin-bottom: 15px;
+  }
+
+  .card--active.card::before {
+    border-radius: 10px;
+  }
+
+  .card__button {
+    font-size: 16px;
+    padding: 12px 78px;
+  }
+
+  .card__booking {
+    width: 288px;
+    padding: 19px 25px 45px 23px;
+  }
+
+  .card__br {
+    display: inline-block;
+  }
+
+  .card__br__correction {
+    display: inline-block;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .card {
+    width: 372px;
+    margin: 0 32px 37px 0;
+  }
+
+  .card__wrapper {
+    margin: 0;
+    width: 322px;
+    padding: 0 25px 20px;
+    min-height: 352px;
+  }
+
+  .card__title {
+    font-size: 24px;
+    letter-spacing: initial;
+    margin-top: 20px;
+  }
+
+  .card:nth-child(2n) {
+    margin-right: 32px;
+  }
+
+  .card__image {
+    width: 372px;
+  }
+
+  .card__description {
+    letter-spacing: inherit;
+    margin-top: 10px;
+    margin-bottom: 21px;
+  }
+
+  .card__info {
+    margin: 0;
+  }
+
+  .card__rate {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .card__button {
+    width: 180px;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px 24px 14px 24px;
+  }
+
+  .card__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 19px;
+  }
+
+  .card--active.card__container {
+    border-top: none;
+  }
+
+  .card__booking {
+    width: 372px;
+    padding: 27px 0 29px 0;
+  }
+
+  .card__reserve {
+    margin: 0;
+  }
+
+  .card__br__correction {
+    display: inline;
+  }
+
+  .card__badge {
+    left: 24px;
+  }
+}

@@ -1,0 +1,32 @@
+.catalog-hotel {
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-hotel__item {
+  position: relative;
+  list-style-type: none;
+}
+
+@media (min-width: @tablet-width) {
+  .catalog-hotel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 700px;
+  }
+
+  .catalog-hotel__item {
+    margin-bottom: 36px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .catalog-hotel {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    width: 1180px;
+  }
+}
